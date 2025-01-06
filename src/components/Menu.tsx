@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Menu = ({ isHome = false }: { isHome?: boolean }) => {
   const [active, setActive] = useState<number>(0);
+  const location = useLocation();
   useEffect(() => {
-    const path = window.location.pathname;
-    switch (path) {
+    console.log("location.pathname", location.pathname);
+    switch (location.pathname) {
       case "/":
         setActive(0);
         break;
@@ -21,41 +23,41 @@ const Menu = ({ isHome = false }: { isHome?: boolean }) => {
         setActive(4);
         break;
     }
-  }, []);
+  }, [location]);
   return (
     <div className="mt-10 flex space-x-5 text-blue-500 text-3xl lg:text-sm [&>a:hover]:font-bold">
       {!isHome && (
-        <a
-          href="/"
+        <Link
+          to="/"
           className={`${active == 0 ? "underline underline-offset-8" : ""}`}
         >
           home
-        </a>
+        </Link>
       )}
-      <a
-        href="/work"
+      <Link
+        to="/work"
         className={`${active == 1 ? "underline underline-offset-8" : ""}`}
       >
         work
-      </a>
-      <a
-        href="/projects"
+      </Link>
+      <Link
+        to="/projects"
         className={`${active == 2 ? "underline underline-offset-8" : ""}`}
       >
         projects
-      </a>
-      <a
-        href="/blog"
+      </Link>
+      <Link
+        to="/blog"
         className={`${active == 3 ? "underline underline-offset-8" : ""}`}
       >
         blog
-      </a>
-      <a
-        href="/doggos"
+      </Link>
+      <Link
+        to="/doggos"
         className={`${active == 4 ? "underline underline-offset-8" : ""}`}
       >
         doggos
-      </a>
+      </Link>
     </div>
   );
 };
