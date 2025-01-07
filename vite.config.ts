@@ -5,7 +5,7 @@ import tailwindcss from "tailwindcss";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/yuhanmeyer/",
+  base: "/",
   css: {
     postcss: {
       plugins: [tailwindcss()],

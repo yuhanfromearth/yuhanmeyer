@@ -5,7 +5,6 @@ const Menu = ({ isHome = false }: { isHome?: boolean }) => {
   const [active, setActive] = useState<number>(0);
   const location = useLocation();
   useEffect(() => {
-    console.log("location.pathname", location.pathname);
     switch (location.pathname) {
       case "/":
         setActive(0);
