@@ -6,9 +6,26 @@ const Projects = () => {
   const projects = [
     {
       title: "YuHanFromEarth",
-      description: "hey, that's this page :D",
+      description:
+        "to any aliens seeing this, my name is Yu Han and I'm from earth 🌍",
       link: "/",
       techstack: ["React.js", "TailwindCSS", "Vite"],
+    },
+    {
+      title: "Turtle",
+      description:
+        "Real-time Chat Bot with the Mount Sinai Data Warehouse using LLMs and SAP HANA.",
+      subd: "As a team of 8 students at HPI, we spent 12 months building Turtle - a real-time chatbot interface for healthcare data analysis at Mount Sinai. The system allows medical professionals to query complex patient datasets using natural language, automatically translating conversations into SQL queries and presenting results in an easily understandable format. Built with LLMs and integrated with the OMOP Common Data Model.",
+      techstack: [
+        "Python",
+        "NLP",
+        "NER",
+        "Entity Linking",
+        "React.js",
+        "TailwindCSS",
+        "CI/CD",
+        "Agile Dev",
+      ],
     },
     {
       title: "Spotify RSS Feed Generator",
@@ -30,7 +47,9 @@ const Projects = () => {
                   <a className="text-blue-500 italic" href={project.link}>
                     {project.title}
                   </a>
-                  <IoUnlinkSharp className="opacity-50 ml-2" />
+                  {project.link && (
+                    <IoUnlinkSharp className="opacity-50 ml-2" />
+                  )}
                 </h3>
                 <span className="text-xs opacity-0 group-hover:opacity-60 transition-opacity">
                   →
@@ -38,6 +57,7 @@ const Projects = () => {
               </div>
 
               <p className="mt-1 lg:text-sm">{project.description}</p>
+              <p className="mt-1 lg:text-sm">{project.subd}</p>
 
               <TechStack techstack={project.techstack} />
             </div>
