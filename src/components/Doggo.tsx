@@ -27,7 +27,7 @@ const Doggo = ({
   const [facingRight, setFacingRight] = useState(true);
 
   // Constants
-  const SPEED = 0.5;
+  const SPEED = 1;
   const DIRECTION_THRESHOLD = 0.5; // Threshold for determining diagonal movement
 
   useEffect(() => {
@@ -141,8 +141,8 @@ const Doggo = ({
       ref={goodboi}
       className={`fixed cursor-pointer hidden lg:block w-12 h-12 ${facingRight && currentSprite == idleSprite ? "scale-x-[-1]" : ""}`}
       style={{
-        left: `${doggoPos.x}px`,
-        top: `${doggoPos.y}px`,
+        left: `${doggoPos.x - 24}px`,
+        top: `${doggoPos.y - 24}px`,
       }}
       onClick={handleDoggoClick}
     >

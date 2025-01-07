@@ -14,8 +14,8 @@ const Home = () => {
       if (spawnRef.current) {
         const rect = spawnRef.current.getBoundingClientRect();
         setDoggoPosition({
-          x: rect.left - 10, // 20px offset from the right edge of Socials
-          y: rect.top - 60, // Vertically centered with Socials
+          x: rect.left + 15,
+          y: rect.top - 25,
         });
         setIsPositionReady(true); // Mark as ready once we have real values
       }
