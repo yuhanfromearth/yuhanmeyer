@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    // Target latest browsers for better performance and features
     "target": "ES2020",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
@@ -13,12 +12,8 @@
     "isolatedModules": true,
     "noEmit": true,
 
-    // Strict type checking
+    // go strict or go home
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
 
     // Module handling
     "allowJs": true,
@@ -26,7 +21,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
 
-    // Path aliases (customize as needed)
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

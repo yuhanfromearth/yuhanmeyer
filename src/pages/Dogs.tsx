@@ -2,14 +2,28 @@ import { useEffect, useState } from "react";
 import Menu from "@/components/Menu";
 import { ClipLoader } from "react-spinners";
 
+interface DogApiResponse {
+  message: string;
+  status: string;
+}
+
 const Dogs = () => {
   const [dog, setDog] = useState<string>("");
   const [fetched, setFetched] = useState<boolean>(false);
   useEffect(() => {
-    fetch("https://dog.ceo/api/breeds/image/random")
-      .then((res) => res.json())
-      .then((data) => setDog(data.message))
-      .then(() => setFetched(true));
+    const fetchDog = async () => {
+      try {
+        const res = await fetch("https://dog.ceo/api/breeds/image/random");
+        const data: DogApiResponse = await res.json();
+        setDog(data.message);
+        setFetched(true);
+      } catch (error) {
+        console.error("Error fetching dog:", error);
+        // Optionally handle error state here
+      }
+    };
+
+    fetchDog();
   }, []);
   return (
     <div className="w-screen h-svh flex justify-center font-mono overflow-hidden">

@@ -1,8 +1,18 @@
 import Menu from "@/components/Menu";
 import TechStack from "@/components/TechStack";
 
+interface Experience {
+  title: string;
+  subtitle: string;
+  company: string;
+  companyUrl: string;
+  date: string;
+  description: string;
+  techstack: string[];
+}
+
 const Work = () => {
-  const experiences = [
+  const experiences: Array<Experience> = [
     {
       title: "Software Consultant",
       subtitle: "Working Student",

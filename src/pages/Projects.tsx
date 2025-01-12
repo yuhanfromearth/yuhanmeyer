@@ -2,8 +2,16 @@ import Menu from "@/components/Menu";
 import TechStack from "@/components/TechStack";
 import { IoUnlinkSharp } from "react-icons/io5";
 
+interface Project {
+  title: string;
+  description: string;
+  link?: string; // Optional property since not all projects have it
+  subd?: string; // Optional detailed description
+  techstack: string[];
+}
+
 const Projects = () => {
-  const projects = [
+  const projects: Array<Project> = [
     {
       title: "YuHanFromEarth",
       description:
