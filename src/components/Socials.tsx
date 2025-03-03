@@ -7,7 +7,7 @@ const Socials = () => {
       <a target="_blank" href="https://www.linkedin.com/in/yu-han-meyer/">
         <FaLinkedin className="h-full w-auto hover:fill-black" />
       </a>
-      <a target="_blank" href="https://github.com/ChiefYuHan">
+      <a target="_blank" href="https://github.com/yuhanfromearth">
         <FaGithub className="h-full w-auto hover:fill-black" />
       </a>
     </div>

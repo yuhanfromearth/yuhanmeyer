@@ -45,7 +45,9 @@ const Dogs = () => {
             className="h-auto max-h-[50%] mt-8 relative"
           />
         )}
-        <div className="absolute bottom-52 lg:bottom-28">
+        <div className="absolute flex flex-col items-center bottom-52 lg:bottom-20">
+          <p className="text-gray-500 text-sm">refresh to fetch new doggo</p>
+
           <Menu />
         </div>
       </div>
