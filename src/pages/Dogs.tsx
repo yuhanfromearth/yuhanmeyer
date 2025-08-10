@@ -10,6 +10,7 @@ interface DogApiResponse {
 const Dogs = () => {
   const [dog, setDog] = useState<string>("");
   const [fetched, setFetched] = useState<boolean>(false);
+
   useEffect(() => {
     const fetchDog = async () => {
       try {
@@ -25,6 +26,7 @@ const Dogs = () => {
 
     fetchDog();
   }, []);
+
   return (
     <div className="w-screen h-svh flex justify-center font-mono overflow-hidden">
       <div className="flex flex-col w-full items-center justify-center relative">

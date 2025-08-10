@@ -12,7 +12,7 @@ interface Experience {
 }
 
 const Work = () => {
-  const experiences: Array<Experience> = [
+  const experiences: Experience[] = [
     {
       title: "Software Consultant",
       subtitle: "Working Student",
@@ -40,6 +40,23 @@ const Work = () => {
         "React.js",
         "Node.js",
         "How to make good coffee.",
+      ],
+    },
+    {
+      title: "Junior Backend Developer",
+      subtitle: "Nestjs / TypeScript",
+      company: "dotSource",
+      companyUrl: "https://www.dotsource.de/",
+      date: "April 2025 - Now",
+      description:
+        "Building scalable backend APIs in a 30+ Microservice system for Asklepios.",
+      techstack: [
+        "Nestjs",
+        "TypeScript",
+        "Vitest",
+        "Microservice Architecture",
+        "Kubernetes",
+        "K9s",
       ],
     },
   ];
