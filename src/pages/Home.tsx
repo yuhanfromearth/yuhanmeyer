@@ -37,14 +37,15 @@ const Home = () => {
         <p className="mt-8 lg:mt-4">software engineer</p>
         <p className="mt-4 lg:mt-2">based in Berlin, Germany</p>
         <p className="mt-4 lg:mt-2">
-          freshly graduated, ex IT-Systems-Engineering{" "}
+          BSc. in IT-Systems-Engineering{" "}
           <a
             className="text-blue-500"
             target="_blank"
             href="https://hpi.de/en/"
           >
             @HPI
-          </a>
+          </a>{" "}
+          (2024)
         </p>
         <Socials />
         {isPositionReady && (
