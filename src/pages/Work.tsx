@@ -49,7 +49,7 @@ const Work = () => {
       companyUrl: "https://www.dotsource.de/",
       date: "April 2025 - Now",
       description:
-        "Building scalable backend APIs in a 30+ Microservice system for Asklepios.",
+        "Building scalable backend APIs in a 30+ Microservice system.",
       techstack: [
         "Nestjs",
         "TypeScript",
