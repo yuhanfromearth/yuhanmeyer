@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import Menu from "@/components/Menu";
 import { ClipLoader } from "react-spinners";
+import { useDoggoQueue } from "@/hooks/useDoggoQueue";
 
 interface DogApiResponse {
   message: string;
@@ -8,24 +8,7 @@ interface DogApiResponse {
 }
 
 const Dogs = () => {
-  const [dog, setDog] = useState<string>("");
-  const [fetched, setFetched] = useState<boolean>(false);
-
-  useEffect(() => {
-    const fetchDog = async () => {
-      try {
-        const res = await fetch("https://dog.ceo/api/breeds/image/random");
-        const data: DogApiResponse = await res.json();
-        setDog(data.message);
-        setFetched(true);
-      } catch (error) {
-        console.error("Error fetching dog:", error);
-        // Optionally handle error state here
-      }
-    };
-
-    fetchDog();
-  }, []);
+  const { dog, fetched } = useDoggoQueue();
 
   return (
     <div className="w-screen h-svh flex justify-center font-mono overflow-hidden">
