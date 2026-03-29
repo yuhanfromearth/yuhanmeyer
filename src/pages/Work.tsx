@@ -14,6 +14,23 @@ interface Experience {
 const Work = () => {
   const experiences: Experience[] = [
     {
+      title: "Junior Backend Developer",
+      subtitle: "Developer",
+      company: "dotSource",
+      companyUrl: "https://www.dotsource.de/",
+      date: "April 2025 - Now",
+      description:
+        "Building scalable backend APIs in a 30+ Microservice system for a leading healthcare provider in Germany (B2B software solution)",
+      techstack: [
+        "Nestjs",
+        "TypeScript",
+        "Vitest",
+        "Microservice Architecture (pain)",
+        "Redis",
+        "Kubernetes",
+      ],
+    },
+    {
       title: "Software Consultant",
       subtitle: "Working Student",
       company: "araneaCONSULT",
@@ -42,29 +59,12 @@ const Work = () => {
         "How to make good coffee.",
       ],
     },
-    {
-      title: "Junior Backend Developer",
-      subtitle: "Nestjs / TypeScript",
-      company: "dotSource",
-      companyUrl: "https://www.dotsource.de/",
-      date: "April 2025 - Now",
-      description:
-        "Building scalable backend APIs in a 30+ Microservice system.",
-      techstack: [
-        "Nestjs",
-        "TypeScript",
-        "Vitest",
-        "Microservice Architecture",
-        "Kubernetes",
-        "K9s",
-      ],
-    },
   ];
   return (
     <div className="w-screen h-svh flex flex-col justify-center font-mono overflow-hidden">
       <div className="mx-32 lg:mx-80 text-3xl lg:text-sm 2xl:text-lg text-gray-500">
         <h2 className="text-4xl lg:text-xl font-bold text-black">work.</h2>
-        <p className="mt-6 lg:mt-2">where curiosity led me...</p>
+        <p className="mt-6 lg:mt-2">where I earned my bread...</p>
         <div className="mt-8 mb-14 text-2xl lg:text-sm">
           {experiences.map((experiences) => (
             <div className="mt-8">

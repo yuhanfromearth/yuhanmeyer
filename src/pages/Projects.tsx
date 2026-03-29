@@ -11,11 +11,10 @@ interface Project {
 }
 
 const Projects = () => {
-  const projects: Array<Project> = [
+  const projects: Project[] = [
     {
       title: "YuHanFromEarth",
-      description:
-        "to any aliens seeing this, my name is Yu Han and I'm from earth 🌍",
+      description: "that's me :D",
       link: "/",
       techstack: ["React.js", "TailwindCSS", "Vite"],
     },
@@ -24,6 +23,7 @@ const Projects = () => {
       description:
         "Real-time Chat Bot with the Mount Sinai Data Warehouse using LLMs and SAP HANA.",
       subd: "As a team of 8 students at HPI, we spent 12 months building Turtle - a real-time chatbot interface for healthcare data analysis at Mount Sinai. The system allows medical professionals to query complex patient datasets using natural language, automatically translating conversations into SQL queries and presenting results in an easily understandable format. Built with LLMs and integrated with the OMOP Common Data Model.",
+      link: "https://www.tele-task.de/lecture/video/10759/",
       techstack: [
         "Python",
         "NLP",
@@ -52,7 +52,11 @@ const Projects = () => {
             <div>
               <div className="flex items-baseline justify-between">
                 <h3 className="text-3xl lg:text-lg text-black group-hover:text-gray-600 transition-colors inline-flex items-center">
-                  <a className="text-blue-500 italic" href={project.link}>
+                  <a
+                    className="text-blue-500 italic"
+                    href={project.link}
+                    target="_blank"
+                  >
                     {project.title}
                   </a>
                   {project.link && (
