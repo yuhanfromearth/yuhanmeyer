@@ -61,13 +61,13 @@ const Work = () => {
     },
   ];
   return (
-    <div className="w-screen h-svh flex flex-col justify-center font-mono overflow-hidden">
+    <div className="w-screen h-svh flex flex-col font-mono overflow-hidden pt-[18vh]">
       <div className="mx-32 lg:mx-80 text-3xl lg:text-sm 2xl:text-lg text-gray-500">
         <h2 className="text-4xl lg:text-xl font-bold text-black">work.</h2>
-        <p className="mt-6 lg:mt-2">where I earned my bread...</p>
-        <div className="mt-8 mb-14 text-2xl lg:text-sm">
+        <p className="mt-4 lg:mt-2">where I earned my bread...</p>
+        <div className="mt-12 space-y-8 text-2xl lg:text-sm max-h-[55vh] overflow-y-auto pr-4 pb-8">
           {experiences.map((experiences) => (
-            <div className="mt-8">
+            <div>
               <h3 className="text-3xl lg:text-lg text-black">
                 {experiences.title}
               </h3>

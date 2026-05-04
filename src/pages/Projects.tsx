@@ -57,11 +57,11 @@ const Projects = () => {
     },
   ];
   return (
-    <div className="w-screen h-svh flex flex-col justify-center font-mono overflow-hidden">
+    <div className="w-screen h-svh flex flex-col font-mono overflow-hidden pt-[18vh]">
       <div className="mx-32 lg:mx-80 text-3xl lg:text-sm 2xl:text-lg text-gray-500">
         <h2 className="text-4xl lg:text-xl font-bold text-black">projects.</h2>
         <p className="mt-4 lg:mt-2">still learning...</p>
-        <div className="mt-12 space-y-8">
+        <div className="mt-12 space-y-8 max-h-[55vh] overflow-y-auto pr-4 pb-8">
           {projects.map((project) => (
             <div>
               <div className="flex items-baseline justify-between">

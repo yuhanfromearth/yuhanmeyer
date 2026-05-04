@@ -24,7 +24,13 @@ const Menu = ({ isHome = false }: { isHome?: boolean }) => {
     }
   }, [location]);
   return (
-    <div className="mt-10 flex space-x-5 text-blue-500 text-3xl lg:text-sm [&>a:hover]:font-bold">
+    <div
+      className={
+        isHome
+          ? "mt-10 flex space-x-5 text-blue-500 text-3xl lg:text-sm [&>a:hover]:font-bold"
+          : "fixed bottom-10 left-1/2 -translate-x-1/2 flex space-x-5 text-blue-500 text-3xl lg:text-sm [&>a:hover]:font-bold"
+      }
+    >
       {!isHome && (
         <Link
           to="/"
