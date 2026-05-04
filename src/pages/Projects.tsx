@@ -13,6 +13,20 @@ interface Project {
 const Projects = () => {
   const projects: Project[] = [
     {
+      title: "Kontekst.",
+      description:
+        "OpenRouter wrapper with minimal UI and local Context Management with utility keyboard shortcuts. Chat with any LLM, at API cost, without the noise.",
+      link: "https://github.com/yuhanfromearth/kontekst",
+      techstack: [
+        "Nestjs",
+        "React.js",
+        "TailwindCSS",
+        "Github Actions",
+        "NPM publishing",
+        "Claude Code",
+      ],
+    },
+    {
       title: "YuHanFromEarth",
       description: "that's me :D",
       link: "/",

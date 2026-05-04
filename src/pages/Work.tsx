@@ -15,7 +15,7 @@ const Work = () => {
   const experiences: Experience[] = [
     {
       title: "Junior Backend Developer",
-      subtitle: "Developer",
+      subtitle: "Fulltime",
       company: "dotSource",
       companyUrl: "https://www.dotsource.de/",
       date: "April 2025 - Now",
