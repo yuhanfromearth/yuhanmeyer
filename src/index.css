@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+/* Don't let mobile browsers auto-inflate text, and make taps register
+   instantly (no 300ms double-tap-zoom delay) for snappier navigation. */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+a,
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}

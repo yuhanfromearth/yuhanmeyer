@@ -23,43 +23,46 @@ const Menu = ({ isHome = false }: { isHome?: boolean }) => {
         break;
     }
   }, [location]);
+  const link =
+    "px-1 py-2 -my-2 transition-opacity active:opacity-50 hover:font-bold";
   return (
     <div
       className={
-        isHome
-          ? "mt-[clamp(1.5rem,4vw,2.5rem)] flex space-x-[clamp(0.75rem,2vw,1.25rem)] text-blue-500 text-[clamp(0.95rem,1.4vw,1.15rem)] [&>a:hover]:font-bold"
-          : "fixed bottom-[clamp(1.5rem,4vw,2.5rem)] left-1/2 -translate-x-1/2 flex space-x-[clamp(0.75rem,2vw,1.25rem)] text-blue-500 text-[clamp(0.95rem,1.4vw,1.15rem)] [&>a:hover]:font-bold"
+        (isHome
+          ? "mt-[clamp(1rem,3vw,2rem)] -ml-1 "
+          : "fixed bottom-[clamp(1.5rem,4vw,2.5rem)] left-1/2 -translate-x-1/2 px-4 ") +
+        "flex flex-wrap gap-x-[clamp(0.5rem,2vw,1.25rem)] text-blue-500 text-[clamp(1.05rem,1.5vw,1.15rem)]"
       }
     >
       {!isHome && (
         <Link
           to="/"
-          className={`${active == 0 ? "underline underline-offset-8" : ""}`}
+          className={`${link} ${active == 0 ? "underline underline-offset-8" : ""}`}
         >
           home
         </Link>
       )}
       <Link
         to="/work"
-        className={`${active == 1 ? "underline underline-offset-8" : ""}`}
+        className={`${link} ${active == 1 ? "underline underline-offset-8" : ""}`}
       >
         work
       </Link>
       <Link
         to="/projects"
-        className={`${active == 2 ? "underline underline-offset-8" : ""}`}
+        className={`${link} ${active == 2 ? "underline underline-offset-8" : ""}`}
       >
         projects
       </Link>
       <Link
         to="/blog"
-        className={`${active == 3 ? "underline underline-offset-8" : ""}`}
+        className={`${link} ${active == 3 ? "underline underline-offset-8" : ""}`}
       >
         blog
       </Link>
       <Link
         to="/doggos"
-        className={`${active == 4 ? "underline underline-offset-8" : ""}`}
+        className={`${link} ${active == 4 ? "underline underline-offset-8" : ""}`}
       >
         doggos
       </Link>

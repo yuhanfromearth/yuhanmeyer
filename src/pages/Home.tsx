@@ -29,9 +29,9 @@ const Home = () => {
 
   return (
     <div className="w-svw h-svh flex flex-col justify-center font-mono overflow-hidden">
-      <div className="ml-[clamp(1.5rem,10vw,20rem)] pr-[clamp(1.5rem,4vw,3rem)] max-w-152 text-[clamp(0.95rem,1.4vw,1.15rem)] text-gray-500">
+      <div className="ml-[clamp(1.5rem,10vw,20rem)] pr-[clamp(1.5rem,4vw,3rem)] max-w-152 text-[clamp(1rem,1.4vw,1.15rem)] text-gray-500">
         <div ref={spawnRef} className="w-1"></div>
-        <h1 className="text-[clamp(1.5rem,4vw,2.25rem)] font-bold text-black leading-tight">
+        <h1 className="text-[clamp(1.6rem,5vw,2.25rem)] font-bold text-black leading-tight">
           yu han ∩ meyer
         </h1>
         <p className="mt-[clamp(0.75rem,2vw,1.25rem)]">software engineer</p>
