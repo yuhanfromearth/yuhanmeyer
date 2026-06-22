@@ -27,8 +27,8 @@ const Menu = ({ isHome = false }: { isHome?: boolean }) => {
     <div
       className={
         isHome
-          ? "mt-10 flex space-x-5 text-blue-500 text-3xl lg:text-sm [&>a:hover]:font-bold"
-          : "fixed bottom-10 left-1/2 -translate-x-1/2 flex space-x-5 text-blue-500 text-3xl lg:text-sm [&>a:hover]:font-bold"
+          ? "mt-[clamp(1.5rem,4vw,2.5rem)] flex space-x-[clamp(0.75rem,2vw,1.25rem)] text-blue-500 text-[clamp(0.95rem,1.4vw,1.15rem)] [&>a:hover]:font-bold"
+          : "fixed bottom-[clamp(1.5rem,4vw,2.5rem)] left-1/2 -translate-x-1/2 flex space-x-[clamp(0.75rem,2vw,1.25rem)] text-blue-500 text-[clamp(0.95rem,1.4vw,1.15rem)] [&>a:hover]:font-bold"
       }
     >
       {!isHome && (

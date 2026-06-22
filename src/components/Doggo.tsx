@@ -25,10 +25,36 @@ const Doggo = ({
   const [isFollowing, setIsFollowing] = useState(false);
   const [currentSprite, setCurrentSprite] = useState(idleSprite);
   const [facingRight, setFacingRight] = useState(true);
+  const [size, setSize] = useState(48);
 
   // Constants
   const SPEED = 1;
   const DIRECTION_THRESHOLD = 0.5; // Threshold for determining diagonal movement
+
+  // Re-anchor to the spawn point only when it actually moves (e.g. on
+  // resize), and not when follow mode is toggled off — otherwise the doggo
+  // would teleport back to spawn instead of sitting where it stopped.
+  const isFollowingRef = useRef(isFollowing);
+  useEffect(() => {
+    isFollowingRef.current = isFollowing;
+  }, [isFollowing]);
+
+  useEffect(() => {
+    if (!isFollowingRef.current) {
+      setDoggoPos({ x: initialX, y: initialY });
+    }
+  }, [initialX, initialY]);
+
+  // Scale the doggo with the viewport
+  useEffect(() => {
+    const updateSize = () => {
+      const w = window.innerWidth;
+      setSize(w < 640 ? 40 : w < 1024 ? 48 : 56);
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   useEffect(() => {
     const updateMouse = (e: MouseEvent) => {
@@ -37,8 +63,21 @@ const Doggo = ({
         y: e.clientY,
       });
     };
+    const updateTouch = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (touch) {
+        setMousePosition({
+          x: touch.clientX,
+          y: touch.clientY,
+        });
+      }
+    };
     window.addEventListener("mousemove", updateMouse);
-    return () => window.removeEventListener("mousemove", updateMouse);
+    window.addEventListener("touchmove", updateTouch);
+    return () => {
+      window.removeEventListener("mousemove", updateMouse);
+      window.removeEventListener("touchmove", updateTouch);
+    };
   }, []);
 
   const determineSprite = (dx: number, dy: number) => {
@@ -139,10 +178,12 @@ const Doggo = ({
   return (
     <div
       ref={goodboi}
-      className={`fixed cursor-pointer hidden lg:block w-12 h-12 ${facingRight && currentSprite == idleSprite ? "scale-x-[-1]" : ""}`}
+      className={`fixed cursor-pointer block ${facingRight && currentSprite == idleSprite ? "scale-x-[-1]" : ""}`}
       style={{
-        left: `${doggoPos.x - 24}px`,
-        top: `${doggoPos.y - 24}px`,
+        width: `${size}px`,
+        height: `${size}px`,
+        left: `${doggoPos.x - size / 2}px`,
+        top: `${doggoPos.y - size / 2}px`,
       }}
       onClick={handleDoggoClick}
     >
