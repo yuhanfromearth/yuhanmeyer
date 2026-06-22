@@ -4,7 +4,7 @@ const TechStack = ({ techstack }: { techstack: Array<string> }) => {
       {techstack.map((tech, techIndex) => (
         <span
           key={techIndex}
-          className="text-2xl lg:text-xs px-2 py-0.5 bg-gray-100 text-gray-500 rounded-full"
+          className="text-[clamp(0.7rem,1.5vw,0.8rem)] px-2 py-0.5 bg-gray-100 text-gray-500 rounded-full"
         >
           {tech}
         </span>

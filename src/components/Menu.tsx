@@ -30,8 +30,8 @@ const Menu = ({ isHome = false }: { isHome?: boolean }) => {
       className={
         (isHome
           ? "mt-[clamp(1rem,3vw,2rem)] -ml-1 "
-          : "fixed bottom-[clamp(1.5rem,4vw,2.5rem)] left-1/2 -translate-x-1/2 px-4 ") +
-        "flex flex-wrap gap-x-[clamp(0.5rem,2vw,1.25rem)] text-blue-500 text-[clamp(1.05rem,1.5vw,1.15rem)]"
+          : "fixed bottom-0 left-0 right-0 justify-center px-4 pt-10 lg:pt-[clamp(3rem,12vh,8rem)] pb-[clamp(1.5rem,4vw,2.5rem)] bg-linear-to-t from-white lg:from-40% via-white to-transparent ") +
+        "flex gap-x-[clamp(0.5rem,2vw,1.25rem)] whitespace-nowrap text-blue-500 text-[clamp(1.05rem,1.5vw,1.15rem)]"
       }
     >
       {!isHome && (

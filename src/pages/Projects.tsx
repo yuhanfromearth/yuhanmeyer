@@ -57,15 +57,17 @@ const Projects = () => {
     },
   ];
   return (
-    <div className="w-screen h-svh flex flex-col font-mono overflow-hidden pt-[18vh]">
-      <div className="mx-32 lg:mx-80 text-3xl lg:text-sm 2xl:text-lg text-gray-500">
-        <h2 className="text-4xl lg:text-xl font-bold text-black">projects.</h2>
-        <p className="mt-4 lg:mt-2">still learning...</p>
-        <div className="mt-12 space-y-8 max-h-[55vh] overflow-y-auto pr-4 pb-8">
+    <div className="w-screen min-h-svh flex flex-col font-mono pt-[18vh] pb-32">
+      <div className="mx-auto w-full max-w-200 px-[clamp(1.5rem,8vw,5rem)] text-[clamp(1rem,1.4vw,1.15rem)] text-gray-500">
+        <h2 className="text-[clamp(1.6rem,5vw,2.25rem)] font-bold text-black">
+          projects.
+        </h2>
+        <p className="mt-[clamp(0.5rem,1vw,0.75rem)]">still learning...</p>
+        <div className="mt-12 space-y-8">
           {projects.map((project) => (
             <div>
               <div className="flex items-baseline justify-between">
-                <h3 className="text-3xl lg:text-lg text-black group-hover:text-gray-600 transition-colors inline-flex items-center">
+                <h3 className="text-[clamp(1.15rem,2.5vw,1.35rem)] text-black group-hover:text-gray-600 transition-colors inline-flex items-center">
                   <a
                     className="text-blue-500 italic"
                     href={project.link}
