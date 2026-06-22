@@ -29,9 +29,9 @@ const Menu = ({ isHome = false }: { isHome?: boolean }) => {
     <div
       className={
         (isHome
-          ? "mt-[clamp(1rem,3vw,2rem)] -ml-1 "
-          : "fixed bottom-0 left-0 right-0 justify-center px-4 pt-10 lg:pt-[clamp(3rem,12vh,8rem)] pb-[clamp(1.5rem,4vw,2.5rem)] bg-linear-to-t from-white lg:from-40% via-white to-transparent ") +
-        "flex gap-x-[clamp(0.5rem,2vw,1.25rem)] whitespace-nowrap text-blue-500 text-[clamp(1.05rem,1.5vw,1.15rem)]"
+          ? "mt-[clamp(1rem,3vw,2rem)] -ml-1 text-[clamp(1.05rem,1.5vw,0.95rem)] "
+          : "fixed bottom-0 left-0 right-0 justify-center px-4 pt-10 lg:pt-[clamp(3rem,12vh,8rem)] pb-[clamp(1.5rem,4vw,2.5rem)] bg-linear-to-t from-white lg:from-40% via-white to-transparent text-[clamp(1.05rem,1.5vw,1.15rem)] ") +
+        "flex gap-x-[clamp(0.5rem,2vw,1.25rem)] whitespace-nowrap text-blue-500"
       }
     >
       {!isHome && (
